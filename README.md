@@ -12,7 +12,7 @@ url：http://guide-acs.m.taobao.com/gw/mtop.taobao.rate.detaillist.get/4.0
 
 ## 签名接口调用
 先放一个postman的图片
-![image.png](https://github.com/Colinlyj210/x-sign/blob/master/s.png?raw=true)
+![image.png](https://github.com/Colinlyj210/x-sign/blob/master/w2.png?raw=true)
 
 
 ## 使用说明：
