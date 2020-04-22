@@ -60,10 +60,10 @@ data = "{\"pageSize\":\"10\",\"foldFlag\":\"0\",\"hasPic\":\"1\",\"pageNo\":\"1\
 taobao_url = "http://acs.m.taobao.com/gw/"+api+"/"+v+"?data=" + data
 
 # sid 需要登陆淘宝后获取，一般长度为32位
-sid = '1d80'
+# sid = '1d80'
 
 # pv 对应签名版本
-pv = '6.2'
+pv = '6.3'
 
 # appKey 固定值，固定为'21646297'
 appKey = '21646297'
@@ -84,7 +84,7 @@ utdid = 'XcZJFF61gMADAep76BgfX2AD'
 def get_sign(data):
     url = 'http://api.xsign.com/api/sign'  # 获取签名的地址
     params = {
-        'sid': sid,
+        #'sid': sid,
         'data': hashlib.md5(data.encode(encoding='UTF-8')).hexdigest(),  # 获取签名需要将data进行md5处理，以方便数据传输
         'api': api,
         'v': v,
@@ -104,7 +104,7 @@ def get_sign(data):
 
 def fetch_rate(sign_res, data):
     header = {
-        'x-sid': sid,
+        #'x-sid': sid,
         'user-Agent': 'MTOPSDK%2F3.1.1.7+%28Android%3B4.4.2%3BXiaomi%3BMI+6%29',
         'x-appkey': appKey,
         'x-ttid': parse.quote(ttid), # 进行URL encode处理，比如@符号要转换成%40
@@ -115,6 +115,8 @@ def fetch_rate(sign_res, data):
         'x-location': '%2C',  # 如果获取参数的时候有参数lat和lng，那这里就是lng%2Clat，本例为空则设置为%2C
         'x-t': sign_res['x-t'],
         'x-sign': sign_res['x-sign'],
+        "x-mini-wua":sign["x-mini-wua"],
+        "x-sgext":sign['x-sgext'],
     }
    
     return requests.get(taobao_url, headers=header).json()
