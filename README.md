@@ -115,8 +115,8 @@ def fetch_rate(sign_res, data):
         'x-location': '%2C',  # 如果获取参数的时候有参数lat和lng，那这里就是lng%2Clat，本例为空则设置为%2C
         'x-t': sign_res['x-t'],
         'x-sign': sign_res['x-sign'],
-        "x-mini-wua":sign["x-mini-wua"],
-        "x-sgext":sign['x-sgext'],
+        "x-mini-wua":sign_res["x-mini-wua"],
+        "x-sgext":sign_res['x-sgext'],
     }
    
     return requests.get(taobao_url, headers=header).json()
