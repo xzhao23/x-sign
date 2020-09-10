@@ -11,7 +11,7 @@ url：http://guide-acs.m.taobao.com/gw/mtop.taobao.rate.detaillist.get/4.0
 头信息：有好多头信息，最重要的x-sign  
 
 ## 签名接口调用
-先放一个postman的图片
+先放一个postman的图片   
 ![image.png](https://github.com/Colinlyj210/x-sign/blob/master/w2.png?raw=true)
 
 
