@@ -1,4 +1,4 @@
-# 淘宝x-sign算法解密分析(更新时间：2020-07-25)
+# 淘宝x-sign算法解密分析(更新时间：2020-09-25)
 
 大家都知道只要有了x-sign基本上所有事情都可以干，包括但不仅限于商品信息，商品评价，秒杀活动等等  
 本文将演示如何获取淘宝商品评价信息，以iphone11为例 [https://detail.tmall.com/item.htm?id=602659642364](https://detail.tmall.com/item.htm?id=602659642364)   
@@ -57,7 +57,7 @@ v='4.0'
 data = "{\"pageSize\":\"10\",\"foldFlag\":\"0\",\"hasPic\":\"1\",\"pageNo\":\"1\",\"auctionNumId\":\"602659642364\"}"
 
 # 淘宝请求地址，所有post请求基本都可以转换成get请求
-taobao_url = "http://acs.m.taobao.com/gw/"+api+"/"+v+"?data=" + data
+taobao_url = "http://acs.m.taobao.com/gw/"+api+"/"+v+"?data=" + parse.quote(data)
 
 # sid 需要登陆淘宝后获取，一般长度为32位
 # sid = '1d80'
